@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+html {
+    overflow-y: scroll;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +27,6 @@ button {
 
 .wrapper {
     min-height: 100vh;
-    padding-bottom: 100px;
 }
 
 .container {
@@ -36,7 +39,7 @@ button {
 .title {
     text-align: center;
     font-size: 28px;
-    margin: 54px 0;
+    margin: 0 0 54px 0;
 }
 
 .content {
@@ -44,6 +47,7 @@ button {
     flex-direction: column;
     align-items: center;
     margin: 0 -7.5px;
+    padding: 54px 0 0 0;
 }
 
 .cards-wrapper {
@@ -101,6 +105,7 @@ button {
     border: 1px solid #fff;
     font-size: 16px;
     transition: .3s ease;
+    margin-bottom: 80px;
 }
 
 .more:hover {

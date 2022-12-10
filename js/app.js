@@ -3,11 +3,10 @@ const cardsWrapper = document.querySelector('.cards-wrapper')
 const more = document.querySelector('.more')
 
 
-const startCrads = []
+const startCards = []
 
 more.addEventListener('click', () => {
     showMore(cardsName)
-    console.log(`startCards:`, startCrads)
 })
 
 function createCard(arr, i) {
@@ -59,18 +58,19 @@ function toUpperString(str) {
 
 function hideCards(arr) {
     for (let i = 0; i <= 5; i++) {
-        startCrads.push(arr[i])
+        startCards.push(arr[i])
         cardsWrapper.append(createCard(arr, i))
     }
 }
+
 hideCards(cardsName)
 
 function showMore(arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (startCrads.includes(cardsName[i])){
+        if (startCards.includes(cardsName[i])){
             continue
         }   else {
-            startCrads.push(cardsName[i])
+            startCards.push(cardsName[i])
             cardsWrapper.append(createCard(arr, i))
         }
     }
