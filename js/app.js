@@ -1,10 +1,13 @@
 const cardsName = ['mission_e', '911_carrera', '918_spyder', 'taycan', 'carrera_gt', 'cayman', 'panamera', 'cayenne']
+const cardsWrapper = document.querySelector('.cards-wrapper')
 const more = document.querySelector('.more')
+
 
 const startCrads = []
 
 more.addEventListener('click', () => {
-    showMore()
+    showMore(cardsName)
+    console.log(`startCards:`, startCrads)
 })
 
 function createCard(arr, i) {
@@ -55,7 +58,6 @@ function toUpperString(str) {
 }
 
 function hideCards(arr) {
-    const cardsWrapper = document.querySelector('.cards-wrapper')
     for (let i = 0; i <= 5; i++) {
         startCrads.push(arr[i])
         cardsWrapper.append(createCard(arr, i))
@@ -63,9 +65,13 @@ function hideCards(arr) {
 }
 hideCards(cardsName)
 
-function showMore() {
-
+function showMore(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (startCrads.includes(cardsName[i])){
+            continue
+        }   else {
+            startCrads.push(cardsName[i])
+            cardsWrapper.append(createCard(arr, i))
+        }
+    }
 }
-
-console.log(cardsName)
-console.log(startCrads)
